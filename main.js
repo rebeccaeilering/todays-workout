@@ -6,8 +6,8 @@ const workouts = [
   "squat jumps",
   "high knees",
   "bicycle",
-  "eliptical",
-  "burpees",
+  "elliptical",
+  "up downs",
   "pushups",
   "skaters",
   "basketball",
@@ -15,9 +15,9 @@ const workouts = [
   "abdominal",
   "weights",
   "sprints",
-  "kettle bell swings",
-  "bent over rows",
-  "shadow boxing"
+  "jump rope",
+  "shadow boxing",
+  "stair climber"
 ];
 
 const abdominal = [
@@ -42,16 +42,17 @@ const weights = [
   "bicep curl",
   "bench press",
   "shoulder press",
-  "lat pulldowns",
+  "lat pull downs",
   "leg press",
-  "tricep pushdown",
+  "triceps push down",
   "leg curls",
   "knee extension",
   "push up",
   "squat",
   "calf raise",
-  "dumbell row",
-  "kettle bell swings"
+  "dumbbell row",
+  "kettle bell swings",
+  "bent over rows"
 ];
 
 const list = document.getElementById('workouts');
