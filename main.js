@@ -58,6 +58,11 @@ const weights = [
 const list = document.getElementById('workouts');
 const abContain = document.getElementById('ab-container');
 const weightContain = document.getElementById('weight-container');
+const button = document.querySelector('button');
+const ulList = document.getElementById('workouts');
+const ulListAbs = document.getElementById('ab-workouts');
+const ulListWeights = document.getElementById('weight-workouts');
+
 
 for (let i = 0; i < workouts.length; i++) {
   const workout = document.createElement("li");
@@ -65,6 +70,7 @@ for (let i = 0; i < workouts.length; i++) {
   workout.setAttribute('data-workouts', workouts[i]);
   list.appendChild(workout);
 }
+
 
 for (let i = list.children.length; i >= 0; i--) {
   list.appendChild(list.children[Math.random() * i | 0]);
@@ -94,10 +100,6 @@ if(dataWeights.offsetWidth !== 0 || dataWeights.offsetHeight !== 0) {
 
 }
 
-const ulList = document.getElementById('workouts');
-const ulListAbs = document.getElementById('ab-workouts');
-const ulListWeights = document.getElementById('weight-workouts');
-
 ulList.addEventListener('click', toggleComplete, false);
 ulListAbs.addEventListener('click', toggleHighlightAbs, false);
 ulListWeights.addEventListener('click', toggleHighlightWeights, false);
@@ -119,4 +121,10 @@ function toggleHighlightWeights(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('highlight-blue');
   }
+}
+
+button.addEventListener('click', refreshPage);
+
+function refreshPage() {
+  window.location.reload();
 }
