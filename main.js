@@ -93,3 +93,30 @@ if(dataWeights.offsetWidth !== 0 || dataWeights.offsetHeight !== 0) {
   weightContain.style.display = 'block';
 
 }
+
+const ulList = document.getElementById('workouts');
+const ulListAbs = document.getElementById('ab-workouts');
+const ulListWeights = document.getElementById('weight-workouts');
+
+ulList.addEventListener('click', toggleComplete, false);
+ulListAbs.addEventListener('click', toggleHighlightAbs, false);
+ulListWeights.addEventListener('click', toggleHighlightWeights, false);
+
+
+function toggleComplete(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('complete');
+  }
+}
+
+function toggleHighlightAbs(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('highlight-green');
+  }
+}
+
+function toggleHighlightWeights(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('highlight-blue');
+  }
+}
