@@ -75,22 +75,35 @@ ul {
 
 li {
   margin-bottom: 5px;
+  border: 1px solid rgba(255,66,115, 0.4);
+  border-radius: 4px;
+  padding: 5px;
+
 }
 
 .complete {
-  text-decoration: line-through;
-  color: #ff4273;
+  background-color: #ff4273;
+  color: #f4f7fc;
 }
 
 .highlight-blue {
   background-color: #00b7c2;
   color: #f4f7fc;
-  padding-left: 5px;
 }
 
 .highlight-green {
   background-color: #4ef037;
   color: #f4f7fc;
-  padding-left: 5px;
+}
 
+button {
+  display: block;
+  width: 100%;
+  background-color: #444;
+  color: #f4f7fc;
+  min-height: 30px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
 }
