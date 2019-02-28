@@ -6,7 +6,7 @@
 
 body {
   font-size: 16px;
-  color: #444;
+  color: #222;
   font-family: 'Open Sans', sans-serif;  
   background-color: #fefefe;
   background-image: linear-gradient(#00b7c2 0%, #4ef037 100%);
@@ -22,14 +22,18 @@ body {
   width: 400px;
   max-width: 100%;
   margin: 20px auto 40px;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   border-radius: 4px;
-  padding: 30px 40px;
   -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
   background-color: #f4f7fc;
   overflow: hidden;
   position: relative;
+}
+
+main {
+  padding: 30px 40px;
+
 }
 
 h1 {
@@ -43,17 +47,10 @@ h2 {
 
 .title {
   position: relative;
-  margin: 0 0 15px 0;
-  height: 60px;
-}
-
-.title::after {
-  background-color: #ff4273;
-  content: '';
-  height: 5px;
-  width: 90px;
-  position: absolute;
-  bottom: 0;
+  padding: 30px 40px;
+  background: rgba(0,183,194, 0.2);
+  border-bottom: 3px solid rgba(0,183,194, 0.2);
+  color: #222;
 }
 
 #workouts li:nth-of-type(1n+6),
@@ -63,10 +60,8 @@ h2 {
 }
 
 .activities-container {
-  padding: 10px 15px;
-  background:rgba(255,66,115, 0.2);
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 ul {
@@ -75,15 +70,23 @@ ul {
 
 li {
   margin-bottom: 5px;
-  border: 1px solid rgba(255,66,115, 0.4);
+  border: 1px solid #ccc;
   border-radius: 4px;
   padding: 5px;
+}
 
+#ab-workouts li {
+  border: 1px solid rgba(78,240,55, 0.5);
+}
+
+#weight-workouts li {
+  border: 1px solid rgba(0,183,194, 0.5);
 }
 
 .complete {
   background-color: #ff4273;
   color: #f4f7fc;
+  display: none;
 }
 
 .highlight-blue {
@@ -93,7 +96,6 @@ li {
 
 .highlight-green {
   background-color: #4ef037;
-  color: #f4f7fc;
 }
 
 button {
