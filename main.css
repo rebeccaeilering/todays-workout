@@ -45,6 +45,13 @@ h2 {
   margin-bottom: 5px;
 }
 
+p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: yellow;
+  display: inline-block;
+}
+
 .title {
   position: relative;
   padding: 30px 40px;
