@@ -1,12 +1,8 @@
 const workouts = [
-  "walking",
-  "jogging",
   "squats",
   "walking lunges",
   "squat jumps",
   "high knees",
-  "bicycle",
-  "elliptical",
   "up downs",
   "pushups",
   "skaters",
@@ -14,10 +10,21 @@ const workouts = [
   "jumping jacks",
   "abdominal",
   "weights",
-  "sprints",
+  "box jumps",
+  "cardio",
+  "kicks"
+];
+
+const cardio = [
+  "walking",
+  "jogging",
+  "bicycle",
+  "elliptical",
+  "skaters",
   "jump rope",
   "shadow boxing",
-  "stair climber"
+  "stairs/hills",
+  "sprints"
 ];
 
 const abdominal = [
@@ -29,12 +36,13 @@ const abdominal = [
   "mountain climbers",
   "planks",
   "plank jacks",
+  "side planks",
   "situps",
   "leg raises",
-  "high crunches",
-  "knee crunches",
   "back extensions",
-  "v ups"
+  "v ups",
+  "bench dips",
+  "situp twists"
 ];
 
 const weights = [
@@ -47,8 +55,6 @@ const weights = [
   "triceps push down",
   "leg curls",
   "knee extension",
-  "push up",
-  "squat",
   "calf raise",
   "dumbbell row",
   "kettle bell swings",
@@ -58,10 +64,13 @@ const weights = [
 const list = document.getElementById('workouts');
 const abContain = document.getElementById('ab-container');
 const weightContain = document.getElementById('weight-container');
+const cardioContain = document.getElementById('cardio-container');
 const button = document.querySelector('button');
 const ulList = document.getElementById('workouts');
 const ulListAbs = document.getElementById('ab-workouts');
 const ulListWeights = document.getElementById('weight-workouts');
+const ulListCardio = document.getElementById('cardio-workouts');
+
 
 
 for (let i = 0; i < workouts.length; i++) {
@@ -71,13 +80,13 @@ for (let i = 0; i < workouts.length; i++) {
   list.appendChild(workout);
 }
 
-
 for (let i = list.children.length; i >= 0; i--) {
   list.appendChild(list.children[Math.random() * i | 0]);
 }
 
 const dataAbs = document.querySelector('li[data-workouts="abdominal"]');
 const dataWeights = document.querySelector('li[data-workouts="weights"]');
+const dataCardio = document.querySelector('li[data-workouts="cardio"]');
 
 if(dataAbs.offsetWidth !== 0 || dataAbs.offsetHeight !== 0) {
   const abList = document.getElementById('ab-workouts');
@@ -97,12 +106,22 @@ if(dataWeights.offsetWidth !== 0 || dataWeights.offsetHeight !== 0) {
     weightList.appendChild(item);
   }
   weightContain.style.display = 'block';
+}
 
+if(dataCardio.offsetWidth !== 0 || dataCardio.offsetHeight !== 0) {
+  const cardioList = document.getElementById('cardio-workouts');
+  for (let i = 0; i < cardio.length; i++) {
+    const item = document.createElement("li");
+    item.innerHTML = cardio[i];
+    cardioList.appendChild(item);
+  }
+  cardioContain.style.display = 'block';
 }
 
 ulList.addEventListener('click', toggleComplete, false);
 ulListAbs.addEventListener('click', toggleHighlightAbs, false);
 ulListWeights.addEventListener('click', toggleHighlightWeights, false);
+ulListCardio.addEventListener('click', toggleHighlightCardio, false);
 
 
 function toggleComplete(ev) {
@@ -113,13 +132,19 @@ function toggleComplete(ev) {
 
 function toggleHighlightAbs(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight-green');
+    ev.target.classList.toggle('highlight');
   }
 }
 
 function toggleHighlightWeights(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight-blue');
+    ev.target.classList.toggle('highlight');
+  }
+}
+
+function toggleHighlightCardio(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('highlight');
   }
 }
 
