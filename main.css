@@ -6,10 +6,10 @@
 
 body {
   font-size: 16px;
-  color: #444;
+  color: #e4e4e4;
   font-family: 'Open Sans', sans-serif;  
-  background-color: #fefefe;
-  background-image: linear-gradient(#00b7c2 0%, #4ef037 100%);
+  background-color: #da1b60;
+  background-image: linear-gradient(#ff8a00 0%, #da1b60 100%);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0 15px;
@@ -22,49 +22,55 @@ body {
   width: 400px;
   max-width: 100%;
   margin: 20px auto 40px;
-  border: 1px solid #eee;
-  border-radius: 4px;
+  border: 1px solid #da1b60;
   padding: 30px 40px;
-  -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
-  background-color: #f4f7fc;
+  background-color: #100e17;
   overflow: hidden;
   position: relative;
 }
 
 h1 {
   font-size: 28px;
+  text-transform: uppercase;
 }
 
 h2 {
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 12px;
 }
 
 .title {
   position: relative;
   margin: 0 0 15px 0;
   height: 60px;
+  text-align: center;
 }
 
-.title::after {
+/* .title::after {
   background-color: #ff4273;
   content: '';
   height: 5px;
   width: 90px;
   position: absolute;
   bottom: 0;
-}
+} */
 
 #workouts li:nth-of-type(1n+6),
 #ab-container,
-#weight-container  {
+#weight-container,
+#cardio-container  {
   display: none;
 }
 
 .activities-container {
-  padding: 10px 15px;
-  background:rgba(255,66,115, 0.2);
+  padding: 15px;
+  background:rgba(218, 27, 96, 0.2);
   border-radius: 4px;
   margin-bottom: 10px;
 }
@@ -75,35 +81,33 @@ ul {
 
 li {
   margin-bottom: 5px;
-  border: 1px solid rgba(255,66,115, 0.4);
+  border: 1px solid rgba(218, 27, 96, 0.4);
   border-radius: 4px;
   padding: 5px;
 
 }
 
 .complete {
-  background-color: #ff4273;
+  background-color: #da1b60;
   color: #f4f7fc;
 }
 
-.highlight-blue {
-  background-color: #00b7c2;
-  color: #f4f7fc;
-}
-
-.highlight-green {
-  background-color: #4ef037;
+.highlight {
+  background-color: #ff8a00;
   color: #f4f7fc;
 }
 
 button {
   display: block;
   width: 100%;
-  background-color: #444;
-  color: #f4f7fc;
+  background-color: #ff8a00;
+  border: 2px solid #da1b60;
+  color: #100e17;
   min-height: 30px;
   padding: 10px;
-  border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
 }

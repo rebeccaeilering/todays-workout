@@ -64,7 +64,7 @@ const weights = [
 const list = document.getElementById('workouts');
 const abContain = document.getElementById('ab-container');
 const weightContain = document.getElementById('weight-container');
-const weightContain = document.getElementById('cardio-container');
+const cardioContain = document.getElementById('cardio-container');
 const button = document.querySelector('button');
 const ulList = document.getElementById('workouts');
 const ulListAbs = document.getElementById('ab-workouts');
@@ -86,6 +86,7 @@ for (let i = list.children.length; i >= 0; i--) {
 
 const dataAbs = document.querySelector('li[data-workouts="abdominal"]');
 const dataWeights = document.querySelector('li[data-workouts="weights"]');
+const dataCardio = document.querySelector('li[data-workouts="cardio"]');
 
 if(dataAbs.offsetWidth !== 0 || dataAbs.offsetHeight !== 0) {
   const abList = document.getElementById('ab-workouts');
@@ -105,12 +106,22 @@ if(dataWeights.offsetWidth !== 0 || dataWeights.offsetHeight !== 0) {
     weightList.appendChild(item);
   }
   weightContain.style.display = 'block';
+}
 
+if(dataCardio.offsetWidth !== 0 || dataCardio.offsetHeight !== 0) {
+  const cardioList = document.getElementById('cardio-workouts');
+  for (let i = 0; i < cardio.length; i++) {
+    const item = document.createElement("li");
+    item.innerHTML = cardio[i];
+    cardioList.appendChild(item);
+  }
+  cardioContain.style.display = 'block';
 }
 
 ulList.addEventListener('click', toggleComplete, false);
 ulListAbs.addEventListener('click', toggleHighlightAbs, false);
 ulListWeights.addEventListener('click', toggleHighlightWeights, false);
+ulListCardio.addEventListener('click', toggleHighlightCardio, false);
 
 
 function toggleComplete(ev) {
@@ -121,13 +132,19 @@ function toggleComplete(ev) {
 
 function toggleHighlightAbs(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight-green');
+    ev.target.classList.toggle('highlight');
   }
 }
 
 function toggleHighlightWeights(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight-blue');
+    ev.target.classList.toggle('highlight');
+  }
+}
+
+function toggleHighlightCardio(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('highlight');
   }
 }
 
