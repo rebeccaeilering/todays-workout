@@ -36,7 +36,7 @@ main {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
@@ -89,14 +89,6 @@ li {
   border: 1px solid rgba(218, 27, 96, 0.4);
   border-radius: 4px;
   padding: 5px;
-}
-
-#ab-workouts li {
-  border: 1px solid rgba(78,240,55, 0.5);
-}
-
-#weight-workouts li {
-  border: 1px solid rgba(0,183,194, 0.5);
 }
 
 .complete {
