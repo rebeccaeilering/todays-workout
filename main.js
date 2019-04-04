@@ -1,12 +1,8 @@
 const workouts = [
-  "walking",
-  "jogging",
   "squats",
   "walking lunges",
   "squat jumps",
   "high knees",
-  "bicycle",
-  "elliptical",
   "up downs",
   "pushups",
   "skaters",
@@ -14,10 +10,21 @@ const workouts = [
   "jumping jacks",
   "abdominal",
   "weights",
-  "sprints",
+  "box jumps",
+  "cardio",
+  "kicks"
+];
+
+const cardio = [
+  "walking",
+  "jogging",
+  "bicycle",
+  "elliptical",
+  "skaters",
   "jump rope",
   "shadow boxing",
-  "stair climber"
+  "stairs/hills",
+  "sprints"
 ];
 
 const abdominal = [
@@ -29,12 +36,13 @@ const abdominal = [
   "mountain climbers",
   "planks",
   "plank jacks",
+  "side planks",
   "situps",
   "leg raises",
-  "high crunches",
-  "knee crunches",
   "back extensions",
-  "v ups"
+  "v ups",
+  "bench dips",
+  "situp twists"
 ];
 
 const weights = [
@@ -47,8 +55,6 @@ const weights = [
   "triceps push down",
   "leg curls",
   "knee extension",
-  "push up",
-  "squat",
   "calf raise",
   "dumbbell row",
   "kettle bell swings",
@@ -58,10 +64,13 @@ const weights = [
 const list = document.getElementById('workouts');
 const abContain = document.getElementById('ab-container');
 const weightContain = document.getElementById('weight-container');
+const weightContain = document.getElementById('cardio-container');
 const button = document.querySelector('button');
 const ulList = document.getElementById('workouts');
 const ulListAbs = document.getElementById('ab-workouts');
 const ulListWeights = document.getElementById('weight-workouts');
+const ulListCardio = document.getElementById('cardio-workouts');
+
 
 
 for (let i = 0; i < workouts.length; i++) {
@@ -70,7 +79,6 @@ for (let i = 0; i < workouts.length; i++) {
   workout.setAttribute('data-workouts', workouts[i]);
   list.appendChild(workout);
 }
-
 
 for (let i = list.children.length; i >= 0; i--) {
   list.appendChild(list.children[Math.random() * i | 0]);
