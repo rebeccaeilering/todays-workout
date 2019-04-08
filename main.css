@@ -101,7 +101,7 @@ li:last-of-type {
 
 .highlight {
   background-color: #da1b60;
-  color: #111;
+  color: #f4f7fc;
 }
 
 button {
@@ -124,7 +124,7 @@ button:active,
 button:focus
  {
   background-color: #da1b60;
-  color: #fff;
+  color: #f4f7fc;
 }
 
 .fa-pray {
