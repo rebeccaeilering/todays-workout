@@ -92,7 +92,7 @@ if(dataAbs.offsetWidth !== 0 || dataAbs.offsetHeight !== 0) {
   const abList = document.getElementById('ab-workouts');
   for (let i = 0; i < abdominal.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = abdominal[i];
+    item.innerHTML = abdominal[i] + '<span class="fas fa-check"></span>';
     abList.appendChild(item);
   }
   abContain.style.display = 'block';
@@ -102,7 +102,7 @@ if(dataWeights.offsetWidth !== 0 || dataWeights.offsetHeight !== 0) {
   const weightList = document.getElementById('weight-workouts');
   for (let i = 0; i < weights.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = weights[i];
+    item.innerHTML = weights[i] + '<span class="fas fa-check"></span>';
     weightList.appendChild(item);
   }
   weightContain.style.display = 'block';
@@ -112,7 +112,7 @@ if(dataCardio.offsetWidth !== 0 || dataCardio.offsetHeight !== 0) {
   const cardioList = document.getElementById('cardio-workouts');
   for (let i = 0; i < cardio.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = cardio[i];
+    item.innerHTML = cardio[i] + '<span class="fas fa-check"></span>';
     cardioList.appendChild(item);
   }
   cardioContain.style.display = 'block';
