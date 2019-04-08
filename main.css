@@ -12,7 +12,7 @@ body {
   background-image: linear-gradient(#ff8a00 0%, #da1b60 100%);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 15px;
+  padding: 0 5px;
   margin: 0;
   min-height: 100vh;
   position: relative;
@@ -21,11 +21,11 @@ body {
 .container {
   width: 400px;
   max-width: 100%;
-  margin: 20px auto 40px;
+  margin: 5px auto 40px;
   border: 1px solid #da1b60;
-  padding: 30px 40px;
+  padding: 0 0 30px;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
-  background-color: #100e17;
+  background-color: #1c1329;
   overflow: hidden;
   position: relative;
 }
@@ -38,6 +38,7 @@ main {
 h1 {
   font-size: 24px;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -53,8 +54,8 @@ p {
 .title {
   position: relative;
   margin: 0 0 15px 0;
-  height: 60px;
   text-align: center;
+  padding: 20px;
 }
 
 /* .title::after {
@@ -74,10 +75,14 @@ p {
 }
 
 .activities-container {
-  padding: 15px;
-  background:rgba(218, 27, 96, 0.2);
+  /* padding: 15px; */
+  /* background:rgba(218, 27, 96, 0.2); */
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.container-title {
+  padding: 0 20px;
 }
 
 ul {
@@ -85,21 +90,27 @@ ul {
 }
 
 li {
-  margin-bottom: 5px;
-  border: 1px solid rgba(218, 27, 96, 0.4);
-  border-radius: 4px;
-  padding: 5px;
+  /* margin-bottom: 5px; */
+  border-top: 2px dashed rgba(218, 27, 96, 0.4);
+  /* border-radius: 4px; */
+  padding: 15px 20px;
+}
+
+#workouts li:nth-of-type(5),
+li:last-of-type {
+  border-bottom: 2px dashed rgba(218, 27, 96, 0.4);
+
 }
 
 .complete {
   background-color: #da1b60;
   color: #f4f7fc;
-  display: none;
+  /* display: none; */
 }
 
 .highlight {
   background-color: #ff8a00;
-  color: #f4f7fc;
+  color: #111;
 }
 
 button {
@@ -112,7 +123,6 @@ button {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  margin-bottom: 20px;
   text-transform: uppercase;
   font-weight: bold;
 }
