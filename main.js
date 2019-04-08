@@ -75,7 +75,7 @@ const ulListCardio = document.getElementById('cardio-workouts');
 
 for (let i = 0; i < workouts.length; i++) {
   const workout = document.createElement("li");
-  workout.innerHTML = workouts[i];
+  workout.innerHTML = workouts[i] + '<span class="fas fa-check"></span>';
   workout.setAttribute('data-workouts', workouts[i]);
   list.appendChild(workout);
 }

@@ -21,9 +21,9 @@ body {
 .container {
   width: 400px;
   max-width: 100%;
-  margin: 5px auto 40px;
+  margin: 5px auto;
   border: 1px solid #da1b60;
-  padding: 0 0 30px;
+  padding: 0;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
   background-color: #1c1329;
   overflow: hidden;
@@ -43,7 +43,7 @@ h1 {
 
 h2 {
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 p {
@@ -57,15 +57,6 @@ p {
   text-align: center;
   padding: 20px;
 }
-
-/* .title::after {
-  background-color: #ff4273;
-  content: '';
-  height: 5px;
-  width: 90px;
-  position: absolute;
-  bottom: 0;
-} */
 
 #workouts li:nth-of-type(1n+6),
 #ab-container,
@@ -103,7 +94,7 @@ li:last-of-type {
 }
 
 .complete {
-  background-color: #da1b60;
+  /* background-color: #da1b60; */
   color: #f4f7fc;
   /* display: none; */
 }
@@ -125,4 +116,20 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.fa-pray {
+  transform: rotate(-110deg);
+  font-size: 24px;
+  padding-right: 9px;
+}
+
+
+.fa-check {
+  color: rgba(255,255,255,0.2);
+  float: right;
+}
+
+.complete .fa-check {
+  color: #da1b60;
 }
