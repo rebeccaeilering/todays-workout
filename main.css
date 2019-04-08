@@ -100,7 +100,7 @@ li:last-of-type {
 }
 
 .highlight {
-  background-color: #ff8a00;
+  background-color: #da1b60;
   color: #111;
 }
 
@@ -108,7 +108,7 @@ button {
   display: block;
   width: 100%;
   background-color: #ff8a00;
-  border: 2px solid #da1b60;
+  border: none;
   color: #100e17;
   min-height: 30px;
   padding: 10px;
@@ -116,6 +116,15 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
+  transition: all .5s;
+}
+
+button:hover,
+button:active,
+button:focus
+ {
+  background-color: #da1b60;
+  color: #fff;
 }
 
 .fa-pray {
