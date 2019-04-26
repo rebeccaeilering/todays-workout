@@ -70,7 +70,7 @@ const ulList = document.getElementById('workouts');
 const ulListAbs = document.getElementById('ab-workouts');
 const ulListWeights = document.getElementById('weight-workouts');
 const ulListCardio = document.getElementById('cardio-workouts');
-
+// const ulListAbs = document.querySelectorAll('.ab-workouts');
 
 
 for (let i = 0; i < workouts.length; i++) {
@@ -118,10 +118,10 @@ if(dataCardio.offsetWidth !== 0 || dataCardio.offsetHeight !== 0) {
   cardioContain.style.display = 'block';
 }
 
-ulList.addEventListener('click', toggleComplete, false);
-ulListAbs.addEventListener('click', toggleHighlightAbs, false);
-ulListWeights.addEventListener('click', toggleHighlightWeights, false);
-ulListCardio.addEventListener('click', toggleHighlightCardio, false);
+ulList.addEventListener('click', toggleComplete);
+ulListAbs.addEventListener('click', toggleHighlightAbs);
+ulListWeights.addEventListener('click', toggleHighlightWeights);
+ulListCardio.addEventListener('click', toggleHighlightCardio);
 
 
 function toggleComplete(ev) {
@@ -132,19 +132,22 @@ function toggleComplete(ev) {
 
 function toggleHighlightAbs(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
+    ev.target.classList.add('highlight');
+    //if class has been added 5x then disable the ability to add class
   }
 }
 
 function toggleHighlightWeights(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
+    ev.target.classList.add('highlight');
+    //if class has been added 5x then disable the ability to add class
   }
 }
 
 function toggleHighlightCardio(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
+    ev.target.classList.add('highlight');
+    //if class has been added 2x then disable the ability to add class
   }
 }
 
