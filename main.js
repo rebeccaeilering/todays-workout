@@ -24,7 +24,8 @@ const cardio = [
   "jump rope",
   "shadow boxing",
   "stairs/hills",
-  "sprints"
+  "sprints",
+  "hiking"
 ];
 
 const abdominal = [
