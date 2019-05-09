@@ -157,6 +157,7 @@ ulList.addEventListener('click', function (workoutsComplete) {
   console.log(workoutsComplete);
   if(workoutsComplete.length === 5) {
     alert("Congrats! You're Done!");
+    window.location.reload();
   } else {
     console.log('false');
   }
