@@ -24,8 +24,7 @@ const cardio = [
   "jump rope",
   "shadow boxing",
   "stairs/hills",
-  "sprints",
-  "hiking"
+  "sprints"
 ];
 
 const abdominal = [
@@ -42,7 +41,6 @@ const abdominal = [
   "leg raises",
   "back extensions",
   "v ups",
-  "bench dips",
   "situp twists"
 ];
 
@@ -71,7 +69,7 @@ const ulList = document.getElementById('workouts');
 const ulListAbs = document.getElementById('ab-workouts');
 const ulListWeights = document.getElementById('weight-workouts');
 const ulListCardio = document.getElementById('cardio-workouts');
-// const ulListAbs = document.querySelectorAll('.ab-workouts');
+
 
 
 for (let i = 0; i < workouts.length; i++) {
@@ -119,36 +117,32 @@ if(dataCardio.offsetWidth !== 0 || dataCardio.offsetHeight !== 0) {
   cardioContain.style.display = 'block';
 }
 
-ulList.addEventListener('click', toggleComplete);
-ulListAbs.addEventListener('click', toggleHighlightAbs);
-ulListWeights.addEventListener('click', toggleHighlightWeights);
-ulListCardio.addEventListener('click', toggleHighlightCardio);
+ulList.addEventListener('click', addComplete, false);
+ulListAbs.addEventListener('click', toggleHighlightAbs, false);
+ulListWeights.addEventListener('click', toggleHighlightWeights, false);
+ulListCardio.addEventListener('click', toggleHighlightCardio, false);
 
-
-function toggleComplete(ev) {
+function addComplete(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('complete');
+    ev.target.classList.add('complete');
   }
 }
 
 function toggleHighlightAbs(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.add('highlight');
-    //if class has been added 5x then disable the ability to add class
+    ev.target.classList.toggle('highlight');
   }
 }
 
 function toggleHighlightWeights(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.add('highlight');
-    //if class has been added 5x then disable the ability to add class
+    ev.target.classList.toggle('highlight');
   }
 }
 
 function toggleHighlightCardio(ev) {
   if (ev.target.tagName === 'LI') {
-    ev.target.classList.add('highlight');
-    //if class has been added 2x then disable the ability to add class
+    ev.target.classList.toggle('highlight');
   }
 }
 
@@ -157,3 +151,13 @@ button.addEventListener('click', refreshPage);
 function refreshPage() {
   window.location.reload();
 }
+
+ulList.addEventListener('click', function (workoutsComplete) {
+  var workoutsComplete = document.getElementById("workouts").querySelectorAll(".complete");
+  console.log(workoutsComplete);
+  if(workoutsComplete.length === 5) {
+    alert("Congrats! You're Done!");
+  } else {
+    console.log('false');
+  }
+});
