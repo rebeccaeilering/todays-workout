@@ -118,47 +118,60 @@ if(dataCardio.offsetWidth !== 0 || dataCardio.offsetHeight !== 0) {
 }
 
 ulList.addEventListener('click', addComplete, false);
-ulListAbs.addEventListener('click', toggleHighlightAbs, false);
-ulListWeights.addEventListener('click', toggleHighlightWeights, false);
-ulListCardio.addEventListener('click', toggleHighlightCardio, false);
+ulListAbs.addEventListener('click', addHighlightAbs, false);
+ulListWeights.addEventListener('click', addHighlightWeights, false);
+ulListCardio.addEventListener('click', addHighlightCardio, false);
+
+function addHighlightCardio(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.add('highlight');
+  }
+  var cardioSelectected = document.getElementById("cardio-workouts").querySelectorAll(".highlight");
+  if(cardioSelectected.length > 2) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.remove('highlight');
+    }
+  }
+};
+
+function addHighlightAbs(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.add('highlight');
+  }
+  var absSelectected = document.getElementById("ab-workouts").querySelectorAll(".highlight");
+  if(absSelectected.length > 5) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.remove('highlight');
+    }
+  }
+};
+
+function addHighlightWeights(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.add('highlight');
+  }
+  var weightsSelectected = document.getElementById("weight-workouts").querySelectorAll(".highlight");
+  if(weightsSelectected.length > 5) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.remove('highlight');
+    }
+  }
+};
 
 function addComplete(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.add('complete');
   }
-}
-
-function toggleHighlightAbs(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
-  }
-}
-
-function toggleHighlightWeights(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
-  }
-}
-
-function toggleHighlightCardio(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
-  }
-}
-
-button.addEventListener('click', refreshPage);
-
-function refreshPage() {
-  window.location.reload();
-}
-
-ulList.addEventListener('click', function (workoutsComplete) {
   var workoutsComplete = document.getElementById("workouts").querySelectorAll(".complete");
-  console.log(workoutsComplete);
   if(workoutsComplete.length === 5) {
     alert("Congrats! You're Done!");
     window.location.reload();
   } else {
     console.log('false');
   }
-});
+};
+
+button.addEventListener('click', refreshPage);
+function refreshPage() {
+  window.location.reload();
+}
