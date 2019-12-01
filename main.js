@@ -70,7 +70,6 @@ const weights = [
   "kettle bell swings",
   "bent over rows",
   "resistance band"
-
 ];
 
 const list = document.getElementById('workouts');
