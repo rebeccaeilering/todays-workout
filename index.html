@@ -15,7 +15,7 @@
   <div class="container">
     <div class="title">
       <h1><span class="fas fa-calendar-day"></span> Today's Workout</h1>
-      <button>Refresh <span class="fas fa-redo-alt"></span></button>
+      <button id="refresh">Refresh <span class="fas fa-redo-alt"></span></button>
     </div>
     <div id="workout-container" class="activities-container">
       <div class="container-title">
@@ -44,14 +44,19 @@
     </div>
     <div id="weight-container" class="activities-container">
       <div class="container-title">
-        <h2><span class="fas fa-dumbbell"></span> Weight Activities</h2>
+        <h2><span class="fas fa-dumbbell"></span> Strength Activities</h2>
         <p>Choose 5 of these.</p>
       </div>
       <ul id="weight-workouts" class="activities-list ab-workouts">
       </ul>
     </div>
   </div>
-
+  <div id="completed-modal">
+    <h2>Congrats, You have completed the following workouts</h2>
+    <div id="completed"></div>
+    <button id="close">Start Over</button>
+    <button id="email">Email</button>
+  </div>
 
   <script src="main.js"></script>
 </body>

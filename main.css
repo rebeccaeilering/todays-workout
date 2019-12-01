@@ -21,8 +21,7 @@ body {
 .container {
   width: 400px;
   max-width: 100%;
-  margin: 5px auto;
-  border: 1px solid #da1b60;
+  margin: 0 auto;
   padding: 0;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
   background-color: #1c1329;
@@ -143,8 +142,38 @@ button:focus
   color: #f4f7fc;
 }
 
+button#email,
+button#close {
+  max-width: 100px;
+  display: inline-block;
+  font-size: 12px;
+
+}
+
 .fa-pray {
   transform: rotate(-110deg);
   font-size: 24px;
   padding-right: 9px;
+}
+
+#completed-modal {
+  display: none;
+  background: white;
+  padding: 20px;
+  color: #1c1329;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+#completed-modal.show {
+  display: block;
+}
+
+.items-complete {
+  font-size: 16px;
 }

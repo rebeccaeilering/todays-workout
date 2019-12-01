@@ -3,7 +3,7 @@ const workouts = [
   "walking lunges",
   "squat jumps",
   "high knees",
-  "up downs",
+  "burpees",
   "pushups",
   "skaters",
   "basketball",
@@ -12,7 +12,13 @@ const workouts = [
   "weights",
   "box jumps",
   "cardio",
-  "kicks"
+  "kicks",
+  "wall sit",
+  "bosu ball",
+  "stability ball",
+  "crab walk",
+  "bear crawl",
+  "inchworm"
 ];
 
 const cardio = [
@@ -41,7 +47,12 @@ const abdominal = [
   "leg raises",
   "back extensions",
   "v ups",
-  "situp twists"
+  "situp twists",
+  "medicine ball toe touch",
+  "bosu ball",
+  "stability ball",
+  "medicine ball roll push up",
+  "shoulder taps"
 ];
 
 const weights = [
@@ -57,14 +68,16 @@ const weights = [
   "calf raise",
   "dumbbell row",
   "kettle bell swings",
-  "bent over rows"
+  "bent over rows",
+  "resistance band"
+
 ];
 
 const list = document.getElementById('workouts');
 const abContain = document.getElementById('ab-container');
 const weightContain = document.getElementById('weight-container');
 const cardioContain = document.getElementById('cardio-container');
-const button = document.querySelector('button');
+const refresh = document.querySelector('#refresh');
 const ulList = document.getElementById('workouts');
 const ulListAbs = document.getElementById('ab-workouts');
 const ulListWeights = document.getElementById('weight-workouts');
@@ -146,7 +159,8 @@ function toggleHighlightCardio(ev) {
   }
 }
 
-button.addEventListener('click', refreshPage);
+refresh.addEventListener('click', refreshPage);
+document.getElementById('close').addEventListener('click', refreshPage);
 
 function refreshPage() {
   window.location.reload();
@@ -154,10 +168,17 @@ function refreshPage() {
 
 ulList.addEventListener('click', function (workoutsComplete) {
   var workoutsComplete = document.getElementById("workouts").querySelectorAll(".complete");
-  console.log(workoutsComplete);
+  const completeItems = document.getElementById('completed');
+  let completeArr = [];
+  for (let i = 0; i < workoutsComplete.length; i++) {
+    completeArr.push(workoutsComplete[i].innerText);
+  }
   if(workoutsComplete.length === 5) {
-    alert("Congrats! You're Done!");
-    window.location.reload();
+    document.getElementById('completed-modal').classList.add('show');
+    completeItems.innerHTML = '<p class="items-complete">' + completeArr.join(', ') + '</p>';
+    document.getElementById('email').addEventListener('click', function () {
+      window.open('mailto:rebeccaeilering@gmail.com?subject=completed workouts&body='+ completeArr);
+    });
   } else {
     console.log('false');
   }
