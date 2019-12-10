@@ -18,7 +18,9 @@ const workouts = [
   "stability ball",
   "crab walk",
   "bear crawl",
-  "inchworm"
+  "inchworm",
+  "lateral shuffle",
+  "side lunges"
 ];
 
 const cardio = [
@@ -30,7 +32,8 @@ const cardio = [
   "jump rope",
   "shadow boxing",
   "stairs/hills",
-  "sprints"
+  "sprints",
+  "rowing"
 ];
 
 const abdominal = [
@@ -52,13 +55,18 @@ const abdominal = [
   "bosu ball",
   "stability ball",
   "medicine ball roll push up",
-  "shoulder taps"
+  "shoulder taps",
+  "warrior crunch",
+  "dead bug",
+  "jack knife",
+  "half kneeling wood chop",
+  "bird dog"
 ];
 
 const weights = [
   "rows",
   "bicep curl",
-  "bench press",
+  "chest press",
   "shoulder press",
   "lat pull downs",
   "leg press",
@@ -69,7 +77,12 @@ const weights = [
   "dumbbell row",
   "kettle bell swings",
   "bent over rows",
-  "resistance band"
+  "resistance band",
+  "butterfly",
+  "tricep extension",
+  "deadlift",
+  "step ups",
+  "dumbell thrusters"
 ];
 
 const list = document.getElementById('workouts');
