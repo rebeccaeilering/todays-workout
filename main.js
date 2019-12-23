@@ -99,7 +99,7 @@ const ulListCardio = document.getElementById('cardio-workouts');
 
 for (let i = 0; i < workouts.length; i++) {
   const workout = document.createElement("li");
-  workout.innerHTML = workouts[i] + '<span class="fas fa-check"></span>';
+  workout.innerHTML = workouts[i] + '<span class="controls"><span class="fas fa-check"></span></span>';
   workout.setAttribute('data-workouts', workouts[i]);
   list.appendChild(workout);
 }
@@ -116,7 +116,7 @@ if(dataAbs.offsetWidth !== 0 || dataAbs.offsetHeight !== 0) {
   const abList = document.getElementById('ab-workouts');
   for (let i = 0; i < abdominal.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = abdominal[i] + '<span class="fas fa-check"></span>';
+    item.innerHTML = abdominal[i] + '<span class="controls"><span class="fas fa-check"></span><span class="fas fa-plus-circle"></span></span>';
     abList.appendChild(item);
   }
   abContain.style.display = 'block';
@@ -126,7 +126,7 @@ if(dataWeights.offsetWidth !== 0 || dataWeights.offsetHeight !== 0) {
   const weightList = document.getElementById('weight-workouts');
   for (let i = 0; i < weights.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = weights[i] + '<span class="fas fa-check"></span>';
+    item.innerHTML = weights[i] + '<span class="controls"><span class="fas fa-check"></span><span class="fas fa-plus-circle"></span></span>';
     weightList.appendChild(item);
   }
   weightContain.style.display = 'block';
@@ -136,40 +136,55 @@ if(dataCardio.offsetWidth !== 0 || dataCardio.offsetHeight !== 0) {
   const cardioList = document.getElementById('cardio-workouts');
   for (let i = 0; i < cardio.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = cardio[i] + '<span class="fas fa-check"></span>';
+    item.innerHTML = cardio[i] + '<span class="controls"><span class="fas fa-check"></span><span class="fas fa-plus-circle"></span></span>';
     cardioList.appendChild(item);
   }
   cardioContain.style.display = 'block';
 }
 
-ulList.addEventListener('click', addComplete, false);
-ulListAbs.addEventListener('click', toggleHighlightAbs, false);
-ulListWeights.addEventListener('click', toggleHighlightWeights, false);
-ulListCardio.addEventListener('click', toggleHighlightCardio, false);
+// Add class to controls - complete and added
 
-function addComplete(ev) {
+ulList.addEventListener('click', function addComplete(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.add('complete');
   }
-}
+});
 
-function toggleHighlightAbs(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
+ulListAbs.addEventListener('click', function selectAbs(ev) {
+  if (ev.target.classList.contains('fa-plus-circle')) {
+    ev.target.closest('li').classList.add('added');
   }
-}
 
-function toggleHighlightWeights(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
+  let itemsAdded = ulListAbs.querySelectorAll(".added");
+  if (itemsAdded.length === 5) {
+    document.getElementById('ab-container').style.display = 'none';
   }
-}
 
-function toggleHighlightCardio(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('highlight');
+  let addedArr = [];
+  for (let i = 0; i < itemsAdded.length; i++) {
+    addedArr.push(itemsAdded[i].innerText);
+    console.log(addedArr);
   }
-}
+  for (let i = 0; i < addedArr.length; i++) {
+    document.getElementById('chosen-abs').innerHTML = '<div class="ab-items"><strong>Chosen Ab Workouts:</strong> ' + addedArr.join(', ') + '</div>';
+  }
+});
+
+
+ulListWeights.addEventListener('click', function selectWeights(ev) {
+  if (ev.target.classList.contains('fa-plus-circle')) {
+    ev.target.classList.add('added');
+    ev.target.previousElementSibling.style.display = 'inline-block';
+  }
+});
+
+ulListCardio.addEventListener('click', function selectCardio(ev) {
+  if (ev.target.classList.contains('fa-plus-circle')) {
+    ev.target.classList.add('added');    ev.target.previousElementSibling.style.display = 'inline-block';
+  }
+});
+
+// Refresh
 
 refresh.addEventListener('click', refreshPage);
 document.getElementById('close').addEventListener('click', refreshPage);
@@ -177,6 +192,8 @@ document.getElementById('close').addEventListener('click', refreshPage);
 function refreshPage() {
   window.location.reload();
 }
+
+// Complete Workout
 
 ulList.addEventListener('click', function (workoutsComplete) {
   var workoutsComplete = document.getElementById("workouts").querySelectorAll(".complete");
@@ -192,6 +209,6 @@ ulList.addEventListener('click', function (workoutsComplete) {
       window.open('mailto:rebeccaeilering@gmail.com?subject=completed workouts&body='+ completeArr);
     });
   } else {
-    console.log('false');
+    console.log('you are not done');
   }
 });

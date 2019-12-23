@@ -70,11 +70,6 @@ p {
   display: none;
 }
 
-.highlight {
-  background-color: #da1b60;
-  color: #f4f7fc;
-}
-
 #ab-container li.highlight .fa-check,
 #weight-container li.highlight .fa-check,
 #cardio-container li.highlight .fa-check {
@@ -106,9 +101,18 @@ li:last-of-type {
 
 }
 
-.fa-check {
-  color: rgba(255,255,255,0.2);
+.controls {
   float: right;
+}
+
+.fa-check,
+.fa-plus-circle {
+  color: rgba(255,255,255,0.2);
+  margin-left: 20px;
+}
+
+li.added .fa-plus-circle {
+  color: #da1b60;
 }
 
 .complete {
@@ -118,6 +122,10 @@ li:last-of-type {
 
 .complete .fa-check {
   color: #da1b60;
+}
+
+.ab-items {
+  padding: 20px;
 }
 
 button {
