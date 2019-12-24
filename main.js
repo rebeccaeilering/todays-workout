@@ -126,7 +126,7 @@ if(dataWeights.offsetWidth !== 0 || dataWeights.offsetHeight !== 0) {
   const weightList = document.getElementById('weight-workouts');
   for (let i = 0; i < weights.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = weights[i] + '<span class="controls"><span class="fas fa-check"></span><span class="fas fa-plus-circle"></span></span>';
+    item.innerHTML = weights[i] + '<span class="controls"><span class="fas fa-plus-circle"></span></span>';
     weightList.appendChild(item);
   }
   weightContain.style.display = 'block';
@@ -136,17 +136,26 @@ if(dataCardio.offsetWidth !== 0 || dataCardio.offsetHeight !== 0) {
   const cardioList = document.getElementById('cardio-workouts');
   for (let i = 0; i < cardio.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = cardio[i] + '<span class="controls"><span class="fas fa-check"></span><span class="fas fa-plus-circle"></span></span>';
+    item.innerHTML = cardio[i] + '<span class="controls"><span class="fas fa-plus-circle"></span></span>';
     cardioList.appendChild(item);
   }
   cardioContain.style.display = 'block';
 }
 
-// Add class to controls - complete and added
-
-ulList.addEventListener('click', function addComplete(ev) {
+ulList.addEventListener('click', function (ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.add('complete');
+  }
+});
+
+const addedAbsList = document.getElementById('chosen-abs');
+addedAbsList.addEventListener('click', function (ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.add('complete');
+  }
+  let itemsComplete = addedAbsList.querySelectorAll(".complete");
+  if (itemsComplete.length === 5) {
+    dataAbs.classList.add('complete');
   }
 });
 
@@ -156,7 +165,6 @@ ulListAbs.addEventListener('click', function (ev) {
     ev.target.classList.remove('fa-plus-circle');
     ev.target.classList.add('fa-check');
     let added = ev.target.closest('li').innerText;
-    const addedAbsList = document.getElementById('chosen-abs');
     addedAbsList.classList.add('added');
     const addedItems = document.createElement("li");
     addedItems.innerHTML = added + '<span class="controls"><span class="fas fa-check"></span></span>';
