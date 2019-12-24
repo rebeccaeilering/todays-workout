@@ -45,6 +45,10 @@ h2 {
   margin-bottom: 5px;
 }
 
+h3 {
+  padding: 20px;
+}
+
 p {
   margin-bottom: 15px;
   font-size: 12px;
@@ -67,7 +71,7 @@ p {
 #ab-container li .fa-check,
 #weight-container li .fa-check,
 #cardio-container li .fa-check {
-  display: none;
+  color: #da1b60;
 }
 
 #ab-container li.highlight .fa-check,
@@ -126,6 +130,14 @@ li.added .fa-plus-circle {
 
 .ab-items {
   padding: 20px;
+}
+
+#chosen-abs {
+  display: none;
+}
+
+#chosen-abs.added {
+  display: block;
 }
 
 button {

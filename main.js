@@ -116,7 +116,7 @@ if(dataAbs.offsetWidth !== 0 || dataAbs.offsetHeight !== 0) {
   const abList = document.getElementById('ab-workouts');
   for (let i = 0; i < abdominal.length; i++) {
     const item = document.createElement("li");
-    item.innerHTML = abdominal[i] + '<span class="controls"><span class="fas fa-check"></span><span class="fas fa-plus-circle"></span></span>';
+    item.innerHTML = abdominal[i] + '<span class="controls"><span class="fas fa-plus-circle"></span></span>';
     abList.appendChild(item);
   }
   abContain.style.display = 'block';
@@ -150,23 +150,22 @@ ulList.addEventListener('click', function addComplete(ev) {
   }
 });
 
-ulListAbs.addEventListener('click', function selectAbs(ev) {
+ulListAbs.addEventListener('click', function (ev) {
   if (ev.target.classList.contains('fa-plus-circle')) {
     ev.target.closest('li').classList.add('added');
+    ev.target.classList.remove('fa-plus-circle');
+    ev.target.classList.add('fa-check');
+    let added = ev.target.closest('li').innerText;
+    const addedAbsList = document.getElementById('chosen-abs');
+    addedAbsList.classList.add('added');
+    const addedItems = document.createElement("li");
+    addedItems.innerHTML = added + '<span class="controls"><span class="fas fa-check"></span></span>';
+    document.querySelector('#chosen-abs ul').appendChild(addedItems);
   }
 
   let itemsAdded = ulListAbs.querySelectorAll(".added");
   if (itemsAdded.length === 5) {
     document.getElementById('ab-container').style.display = 'none';
-  }
-
-  let addedArr = [];
-  for (let i = 0; i < itemsAdded.length; i++) {
-    addedArr.push(itemsAdded[i].innerText);
-    console.log(addedArr);
-  }
-  for (let i = 0; i < addedArr.length; i++) {
-    document.getElementById('chosen-abs').innerHTML = '<div class="ab-items"><strong>Chosen Ab Workouts:</strong> ' + addedArr.join(', ') + '</div>';
   }
 });
 
