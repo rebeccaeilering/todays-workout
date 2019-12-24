@@ -64,9 +64,9 @@ const abdominal = [
 ];
 
 const weights = [
-  "rows",
+  "cable row",
   "bicep curl",
-  "chest press",
+  "bench press",
   "shoulder press",
   "lat pull downs",
   "leg press",
@@ -74,7 +74,8 @@ const weights = [
   "leg curls",
   "knee extension",
   "calf raise",
-  "dumbbell row",
+  "reverse fly",
+  "renegade row",
   "kettle bell swings",
   "bent over rows",
   "resistance band",
@@ -82,7 +83,11 @@ const weights = [
   "tricep extension",
   "deadlift",
   "step ups",
-  "dumbell thrusters"
+  "dumbell thrusters",
+  "dumbell lateral raise",
+  "incline bench press",
+  "dumbell lunge",
+  "thruster"
 ];
 
 const list = document.getElementById('workouts');
