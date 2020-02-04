@@ -164,6 +164,28 @@ addedAbsList.addEventListener('click', function (ev) {
   }
 });
 
+const addedWeightList = document.getElementById('chosen-weights');
+addedWeightList.addEventListener('click', function (ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.add('complete');
+  }
+  let itemsComplete = addedWeightList.querySelectorAll(".complete");
+  if (itemsComplete.length === 5) {
+    dataWeights.classList.add('complete');
+  }
+});
+
+const addedCardioList = document.getElementById('chosen-cardio');
+addedCardioList.addEventListener('click', function (ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.add('complete');
+  }
+  let itemsComplete = addedCardioList.querySelectorAll(".complete");
+  if (itemsComplete.length === 2) {
+    dataCardio.classList.add('complete');
+  }
+});
+
 ulListAbs.addEventListener('click', function (ev) {
   if (ev.target.classList.contains('fa-plus-circle')) {
     ev.target.closest('li').classList.add('added');
@@ -182,17 +204,39 @@ ulListAbs.addEventListener('click', function (ev) {
   }
 });
 
-
-ulListWeights.addEventListener('click', function selectWeights(ev) {
+ulListWeights.addEventListener('click', function (ev) {
   if (ev.target.classList.contains('fa-plus-circle')) {
-    ev.target.classList.add('added');
-    ev.target.previousElementSibling.style.display = 'inline-block';
+    ev.target.closest('li').classList.add('added');
+    ev.target.classList.remove('fa-plus-circle');
+    ev.target.classList.add('fa-check');
+    let added = ev.target.closest('li').innerText;
+    addedWeightList.classList.add('added');
+    const addedItems = document.createElement("li");
+    addedItems.innerHTML = added + '<span class="controls"><span class="fas fa-check"></span></span>';
+    document.querySelector('#chosen-weights ul').appendChild(addedItems);
+  }
+
+  let itemsAdded = ulListWeights.querySelectorAll(".added");
+  if (itemsAdded.length === 5) {
+    document.getElementById('weight-container').style.display = 'none';
   }
 });
 
-ulListCardio.addEventListener('click', function selectCardio(ev) {
+ulListCardio.addEventListener('click', function (ev) {
   if (ev.target.classList.contains('fa-plus-circle')) {
-    ev.target.classList.add('added');    ev.target.previousElementSibling.style.display = 'inline-block';
+    ev.target.closest('li').classList.add('added');
+    ev.target.classList.remove('fa-plus-circle');
+    ev.target.classList.add('fa-check');
+    let added = ev.target.closest('li').innerText;
+    addedCardioList.classList.add('added');
+    const addedItems = document.createElement("li");
+    addedItems.innerHTML = added + '<span class="controls"><span class="fas fa-check"></span></span>';
+    document.querySelector('#chosen-cardio ul').appendChild(addedItems);
+  }
+
+  let itemsAdded = ulListCardio.querySelectorAll(".added");
+  if (itemsAdded.length === 2) {
+    document.getElementById('cardio-container').style.display = 'none';
   }
 });
 

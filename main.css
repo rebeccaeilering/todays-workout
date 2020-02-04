@@ -132,11 +132,15 @@ li.added .fa-plus-circle {
   padding: 20px;
 }
 
-#chosen-abs {
+#chosen-abs,
+#chosen-weights,
+#chosen-cardio {
   display: none;
 }
 
-#chosen-abs.added {
+#chosen-abs.added,
+#chosen-weights.added,
+#chosen-cardio.added  {
   display: block;
 }
 
