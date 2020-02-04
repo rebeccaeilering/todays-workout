@@ -4,11 +4,13 @@ const workouts = [
   "squat jumps",
   "high knees",
   "burpees",
+  "half burpee",
   "pushups",
   "skaters",
   "basketball",
   "jumping jacks",
   "abdominal",
+  "cross jacks",
   "weights",
   "box jumps",
   "cardio",
@@ -20,7 +22,14 @@ const workouts = [
   "bear crawl",
   "inchworm",
   "lateral shuffle",
-  "side lunges"
+  "side lunges",
+  "box toe-taps",
+  "Knee lifts with med ball",
+  "Squat kicks",
+  "Line Taps",
+  "butt kicks",
+  "lunge kicks",
+  "lunge punch"
 ];
 
 const cardio = [
@@ -87,7 +96,8 @@ const weights = [
   "dumbell lateral raise",
   "incline bench press",
   "dumbell lunge",
-  "thruster"
+  "thruster",
+  "tricep dip"
 ];
 
 const list = document.getElementById('workouts');
