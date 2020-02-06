@@ -197,10 +197,9 @@ addedCardioList.addEventListener('click', function (ev) {
 });
 
 ulListAbs.addEventListener('click', function (ev) {
-  if (ev.target.classList.contains('fa-plus-circle')) {
+  if (ev.target.closest('li')) {
     ev.target.closest('li').classList.add('added');
-    ev.target.classList.remove('fa-plus-circle');
-    ev.target.classList.add('fa-check');
+    ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
     let added = ev.target.closest('li').innerText;
     addedAbsList.classList.add('added');
     const addedItems = document.createElement("li");
@@ -215,10 +214,9 @@ ulListAbs.addEventListener('click', function (ev) {
 });
 
 ulListWeights.addEventListener('click', function (ev) {
-  if (ev.target.classList.contains('fa-plus-circle')) {
+  if (ev.target.closest('li')) {
     ev.target.closest('li').classList.add('added');
-    ev.target.classList.remove('fa-plus-circle');
-    ev.target.classList.add('fa-check');
+    ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
     let added = ev.target.closest('li').innerText;
     addedWeightList.classList.add('added');
     const addedItems = document.createElement("li");
@@ -233,10 +231,9 @@ ulListWeights.addEventListener('click', function (ev) {
 });
 
 ulListCardio.addEventListener('click', function (ev) {
-  if (ev.target.classList.contains('fa-plus-circle')) {
+  if (ev.target.closest('li')) {
     ev.target.closest('li').classList.add('added');
-    ev.target.classList.remove('fa-plus-circle');
-    ev.target.classList.add('fa-check');
+    ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
     let added = ev.target.closest('li').innerText;
     addedCardioList.classList.add('added');
     const addedItems = document.createElement("li");
