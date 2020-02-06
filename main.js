@@ -24,9 +24,9 @@ const workouts = [
   "lateral shuffle",
   "side lunges",
   "box toe-taps",
-  "Knee lifts with med ball",
+  "knee lifts with med ball",
   "Squat kicks",
-  "Line Taps",
+  "line taps",
   "butt kicks",
   "lunge kicks",
   "lunge punch"
@@ -109,8 +109,6 @@ const ulList = document.getElementById('workouts');
 const ulListAbs = document.getElementById('ab-workouts');
 const ulListWeights = document.getElementById('weight-workouts');
 const ulListCardio = document.getElementById('cardio-workouts');
-
-
 
 for (let i = 0; i < workouts.length; i++) {
   const workout = document.createElement("li");
