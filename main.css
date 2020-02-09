@@ -201,3 +201,7 @@ button#close {
 .items-complete {
   font-size: 16px;
 }
+
+.hide {
+  display: none;
+}

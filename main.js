@@ -196,8 +196,9 @@ addedCardioList.addEventListener('click', function (ev) {
 
 ulListAbs.addEventListener('click', function (ev) {
   if (ev.target.closest('li')) {
-    ev.target.closest('li').classList.add('added');
-    ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
+    ev.target.closest('li').classList.add('hide');
+    // ev.target.closest('li').classList.add('added');
+    // ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
     let added = ev.target.closest('li').innerText;
     addedAbsList.classList.add('added');
     const addedItems = document.createElement("li");
@@ -205,7 +206,7 @@ ulListAbs.addEventListener('click', function (ev) {
     document.querySelector('#chosen-abs ul').appendChild(addedItems);
   }
 
-  let itemsAdded = ulListAbs.querySelectorAll(".added");
+  let itemsAdded = ulListAbs.querySelectorAll('.hide');
   if (itemsAdded.length === 5) {
     document.getElementById('ab-container').style.display = 'none';
   }
@@ -213,8 +214,9 @@ ulListAbs.addEventListener('click', function (ev) {
 
 ulListWeights.addEventListener('click', function (ev) {
   if (ev.target.closest('li')) {
-    ev.target.closest('li').classList.add('added');
-    ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
+    ev.target.closest('li').classList.add('hide');
+    // ev.target.closest('li').classList.add('added');
+    // ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
     let added = ev.target.closest('li').innerText;
     addedWeightList.classList.add('added');
     const addedItems = document.createElement("li");
@@ -222,7 +224,7 @@ ulListWeights.addEventListener('click', function (ev) {
     document.querySelector('#chosen-weights ul').appendChild(addedItems);
   }
 
-  let itemsAdded = ulListWeights.querySelectorAll(".added");
+  let itemsAdded = ulListWeights.querySelectorAll(".hide");
   if (itemsAdded.length === 5) {
     document.getElementById('weight-container').style.display = 'none';
   }
@@ -230,8 +232,9 @@ ulListWeights.addEventListener('click', function (ev) {
 
 ulListCardio.addEventListener('click', function (ev) {
   if (ev.target.closest('li')) {
-    ev.target.closest('li').classList.add('added');
-    ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
+    ev.target.closest('li').classList.add('hide');
+    // ev.target.closest('li').classList.add('added');
+    // ev.target.closest('li').children[0].innerHTML = '<span class="fas fa-check"></span>';
     let added = ev.target.closest('li').innerText;
     addedCardioList.classList.add('added');
     const addedItems = document.createElement("li");
@@ -239,7 +242,7 @@ ulListCardio.addEventListener('click', function (ev) {
     document.querySelector('#chosen-cardio ul').appendChild(addedItems);
   }
 
-  let itemsAdded = ulListCardio.querySelectorAll(".added");
+  let itemsAdded = ulListCardio.querySelectorAll(".hide");
   if (itemsAdded.length === 2) {
     document.getElementById('cardio-container').style.display = 'none';
   }
