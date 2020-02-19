@@ -266,7 +266,8 @@ ulList.addEventListener('click', function (workoutsComplete) {
   for (let i = 0; i < workoutsComplete.length; i++) {
     completeArr.push(workoutsComplete[i].innerText);
   }
-  if(workoutsComplete.length === 5) {
+  console.log(completeArr);
+  if(completeArr.length === 5) {
     document.getElementById('completed-modal').classList.add('show');
     completeItems.innerHTML = '<p class="items-complete">' + completeArr.join(', ') + '</p>';
     document.getElementById('email').addEventListener('click', function () {
