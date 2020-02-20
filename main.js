@@ -169,6 +169,7 @@ addedAbsList.addEventListener('click', function (ev) {
   let itemsComplete = addedAbsList.querySelectorAll(".complete");
   if (itemsComplete.length === 5) {
     dataAbs.classList.add('complete');
+    dataAbs.click();
   }
 });
 
@@ -180,6 +181,7 @@ addedWeightList.addEventListener('click', function (ev) {
   let itemsComplete = addedWeightList.querySelectorAll(".complete");
   if (itemsComplete.length === 5) {
     dataWeights.classList.add('complete');
+    dataWeights.click();
   }
 });
 
@@ -191,6 +193,7 @@ addedCardioList.addEventListener('click', function (ev) {
   let itemsComplete = addedCardioList.querySelectorAll(".complete");
   if (itemsComplete.length === 2) {
     dataCardio.classList.add('complete');
+    dataCardio.click();
   }
 });
 
@@ -266,7 +269,6 @@ ulList.addEventListener('click', function (workoutsComplete) {
   for (let i = 0; i < workoutsComplete.length; i++) {
     completeArr.push(workoutsComplete[i].innerText);
   }
-  console.log(completeArr);
   if(completeArr.length === 5) {
     document.getElementById('completed-modal').classList.add('show');
     completeItems.innerHTML = '<p class="items-complete">' + completeArr.join(', ') + '</p>';
