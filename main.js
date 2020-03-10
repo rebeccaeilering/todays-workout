@@ -24,12 +24,16 @@ const workouts = [
   "lateral shuffle",
   "side lunges",
   "box toe-taps",
-  "knee lifts with med ball",
+  "knee lifts w med ball",
   "Squat kicks",
   "line taps",
   "butt kicks",
   "lunge kicks",
-  "lunge punch"
+  "lunge punch",
+  "updown planks",
+  "fire hydrant",
+  "donkey kick",
+  "arm circles"
 ];
 
 const cardio = [
@@ -69,7 +73,8 @@ const abdominal = [
   "dead bug",
   "jack knife",
   "half kneeling wood chop",
-  "bird dog"
+  "bird dog",
+  "supermans"
 ];
 
 const weights = [
