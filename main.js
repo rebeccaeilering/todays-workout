@@ -33,7 +33,8 @@ const workouts = [
   "updown planks",
   "fire hydrant",
   "donkey kick",
-  "arm circles"
+  "arm circles",
+  "squat press and throw"
 ];
 
 const cardio = [
@@ -41,7 +42,6 @@ const cardio = [
   "jogging",
   "bicycle",
   "elliptical",
-  "skaters",
   "jump rope",
   "shadow boxing",
   "stairs/hills",
@@ -64,10 +64,10 @@ const abdominal = [
   "back extensions",
   "v ups",
   "situp twists",
-  "medicine ball toe touch",
   "bosu ball",
   "stability ball",
   "medicine ball roll push up",
+  "medicine ball toe touch",
   "shoulder taps",
   "warrior crunch",
   "dead bug",
@@ -101,7 +101,6 @@ const weights = [
   "dumbell lateral raise",
   "incline bench press",
   "dumbell lunge",
-  "thruster",
   "tricep dip"
 ];
 

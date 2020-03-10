@@ -54,11 +54,31 @@ p {
   font-size: 12px;
 }
 
+a {
+  color: #ff8a00;
+}
+
+a:hover,
+a:focus {
+  color: #da1b60;
+}
+
 .title {
   position: relative;
   margin: 0 0 15px 0;
   text-align: center;
   padding: 20px;
+}
+
+.title p {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.header-btns {
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: space-between;
 }
 
 #workouts li:nth-of-type(1n+6),
@@ -144,9 +164,11 @@ li.added .fa-plus-circle {
   display: block;
 }
 
-button {
+button,
+.btn-info {
   display: block;
-  width: 100%;
+  /* width: 100%; */
+  flex: 0 0 48%;
   background-color: #ff8a00;
   border: none;
   color: #100e17;
@@ -156,6 +178,7 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
+  text-decoration: none;
   transition: all .5s;
 }
 
@@ -164,6 +187,7 @@ button:focus
  {
   background-color: #da1b60;
   color: #f4f7fc;
+  text-decoration: none;
 }
 
 button#email,
